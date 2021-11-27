@@ -1,38 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&family=Raleway:wght@100;200;300;400;500;600&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #1a1a1c;
+    color: #ffff;
+}
+
 .App {
-  text-align: center;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.coin-app {
+    text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.coin-search {
+    margin-bottom: 64px;
+    text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.coin-text {
+    margin-bottom: 32px;
+    margin-top: 32px;
+    text-align: cetner;
 }
 
-.App-link {
-  color: #61dafb;
+.coin-input {
+    height: 50px;
+    width: 300px;
+    border: none;
+    border-radius: 3px;
+    background: linear-gradient(90deg, rgba(58, 64, 180, 1) 12%, rgba(76, 58, 180, 1) 32%, rgba(115, 52, 147, 1) 54%, rgba(52, 93, 147, 1) 70%);
+    padding: 0px 10px;
+    color: #ffff;
+    font-size: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.coin-nav {
+    width: 100%;
+}
+
+.coin-nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.coin-nav ul li:first-child {
+    padding: 0 24px;
+    min-width: 300px;
+}
+
+.nav-child {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    text-align: end;
+}
+
+.nav-child div:first-child {
+    width: 100px;
+}
+
+.nav-child div:nth-child(2) {
+    width: 200px;
+}
+
+.nav-child div:nth-child(3) {
+    width: 80px;
+}
+
+.nav-child div:nth-child(4) {
+    width: 200px;
+    padding-right: 24px;
 }
