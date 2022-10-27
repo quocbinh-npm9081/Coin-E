@@ -2,6 +2,9 @@ import './App.css';
 import Coin from './Coin';
 import React, {useState,useEffect} from 'react';
 //https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false
+
+
+
 function App() {
   const [Coins, setCoins] = useState([]);
   const [Search, setSearch] = useState('');
@@ -14,13 +17,26 @@ function App() {
     //   cleanup
     // };
   }, []);
- // console.log(Coins);
+  const useDebounce = (value,delay)=>{
+    const [debouncedValue, setDebouncedValue] = useState(value);
+
+    useEffect(() => {
+      const timeoutId = setTimeout(()=>{
+        setDebouncedValue(value);
+      }, delay);  
+
+      return () => clearTimeout(timeoutId);
+    }, [value, delay])
+
+    return debouncedValue;
+  }
+  const debouncedValue = useDebounce(Search, 1000);
+
   const handleChange = (e) =>{
     setSearch(e.target.value);
-   // console.log(Search);
   }
   const filteredCoins = Coins.filter((coin)=>{
-    return coin.name.toLowerCase().includes(Search.toLowerCase());
+    return coin.name.toLowerCase().includes(debouncedValue.toLowerCase());
   })
   return (
     <div className="App">
